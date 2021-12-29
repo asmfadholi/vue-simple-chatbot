@@ -1,4 +1,9 @@
 import { createApp } from 'vue'
+import Counter from '..'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+app.use(Counter)
+
+app.mount('#app')
