@@ -1,6 +1,6 @@
 {
   "name": "vue-simple-chatbot",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "browser": "dist/vue-simple-chatbot.umd.js",
   "module": "dist/vue-simple-chatbot.common.js",
   "unpkg": "dist/vue-simple-chatbot.umd.min.js",
