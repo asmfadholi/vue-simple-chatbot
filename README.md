@@ -51,28 +51,28 @@ export default {
     name: 'App',
     data() {
         return {
-        steps: [
-            {
-            id: '1',
-            hideInput: true,
-            message: 'Hello World!',
-            trigger: '2'
-            },
-            {
-            id: '2',
-            hideInput: true,
-            options: [
-                { id: 1, label: 'Ops 1', trigger: '1' },
-                { id: 2, label: 'Ops 2', trigger: '3' },
-            ],
-            },
-            {
-                id: '3',
-                hideInput: true,
-                message: 'Bye',
-                end: true
-            },
-        ]
+            steps: [
+                {
+                    id: '1',
+                    hideInput: true,
+                    message: 'Hello World!',
+                    trigger: '2'
+                },
+                {
+                    id: '2',
+                    hideInput: true,
+                    options: [
+                        { id: 1, label: 'Ops 1', trigger: '1' },
+                        { id: 2, label: 'Ops 2', trigger: '3' },
+                    ],
+                },
+                {
+                    id: '3',
+                    hideInput: true,
+                    message: 'Bye',
+                    end: true
+                },
+            ]
         }
     }
 }
