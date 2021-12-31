@@ -8,7 +8,7 @@
     "dev": "vue-cli-service serve ./example/main.js",
     "lint": "vue-cli-service lint",
     "build-lib": "vue-cli-service build --target lib --name vue-simple-chatbot ./src/index.js",
-    "build-example": "vue-cli-service build ./example/index.js"
+    "build-example": "vue-cli-service build ./example/main.js"
   },
   "peerDependencies": {
     "vue": "3.0.0"
