@@ -1,9 +1,9 @@
 import { createApp } from 'vue'
-import Counter from '..'
+import VueChatbot from '../src'
 import App from './App.vue'
 
 const app = createApp(App)
 
-app.use(Counter)
+app.use(VueChatbot)
 
 app.mount('#app')

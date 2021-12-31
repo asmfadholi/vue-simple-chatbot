@@ -1,24 +1,85 @@
-# vue-chat-bot
+# Vue Simple Chatbot
 
-## Project setup
-```
-npm install
-```
+## Getting Start
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+```bash
+npm install vue-simple-chatbot --save
 
-### Compiles and minifies for production
-```
-npm run build
+# or use yarn
+
+yarn add vue-simple-chatbot
 ```
 
-### Lints and fixes files
-```
-npm run lint
+## Usage
+
+### Import as local component
+
+``` javascript
+import VueChatbot from 'vue-simple-chatbot';
+
+export default {
+  name: 'App',
+  components: {
+    VueChatbot
+  }
+}
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Import as global component
+
+``` javascript
+import VueChatbot from 'vue-simple-chatbot';
+
+const app = createApp(App)
+
+app.use(VueChatbot)
+
+app.mount('#app')
+
+```
+
+### Use the component
+
+``` vue
+<template>
+   <vue-chatbot :steps="steps" />
+</template>
+
+<script>
+
+export default {
+    name: 'App',
+    data() {
+        return {
+        steps: [
+            {
+            id: '1',
+            hideInput: true,
+            message: 'Hello World!',
+            trigger: '2'
+            },
+            {
+            id: '2',
+            hideInput: true,
+            options: [
+                { id: 1, label: 'Ops 1', trigger: '1' },
+                { id: 2, label: 'Ops 2', trigger: '3' },
+            ],
+            },
+            {
+                id: '3',
+                hideInput: true,
+                message: 'Bye',
+                end: true
+            },
+        ]
+        }
+    }
+}
+
+</script>
+
+```
+## License
+
+Inspired by [React Simple Chatbot](https://lucasbassetti.com.br/react-simple-chatbot/)

@@ -1,7 +1,7 @@
-import Counter from './components/Counter.vue'
+import VueChatbot from './components/Chatbot'
 
 export default {
   install(Vue) {
-    Vue.component('Counter', Counter)
+    Vue.component('vue-chatbot', VueChatbot)
   }
 }
