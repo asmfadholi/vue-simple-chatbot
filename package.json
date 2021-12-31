@@ -45,9 +45,10 @@
   ],
   "description": "simple chatbot ui",
   "main": "dist/vue-simple-chatbot.common.js",
-  "directories": {
-    "example": "example"
-  },
+  "files": [
+    "dist/*",
+    "package.json"
+  ],
   "dependencies": {},
   "repository": {
     "type": "git",
