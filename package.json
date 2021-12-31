@@ -55,7 +55,10 @@
     "url": "git+https://github.com/asmfadholi/vue-simple-chatbot.git"
   },
   "keywords": [
-    "vue-simple-chatbot"
+    "vue-simple-chatbot",
+    "vue chatbot",
+    "chatbot ui",
+    "simple chatbot"
   ],
   "author": "Mochammad Fadholi",
   "license": "ISC",
