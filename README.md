@@ -16,6 +16,7 @@ yarn add vue-simple-chatbot
 
 ``` javascript
 import VueChatbot from 'vue-simple-chatbot';
+import 'vue-simple-chatbot/dist/vue-simple-chatbot.css'
 
 export default {
   name: 'App',
@@ -28,7 +29,10 @@ export default {
 ### Import as global component
 
 ``` javascript
+import { createApp } from 'vue'
 import VueChatbot from 'vue-simple-chatbot';
+import App from './App.vue'
+import 'vue-simple-chatbot/dist/vue-simple-chatbot.css'
 
 const app = createApp(App)
 
@@ -62,8 +66,8 @@ export default {
                     id: '2',
                     hideInput: true,
                     options: [
-                        { id: 1, label: 'Ops 1', trigger: '1' },
-                        { id: 2, label: 'Ops 2', trigger: '3' },
+                        { id: 1, label: 'Option 1', trigger: '1' },
+                        { id: 2, label: 'Option 2', trigger: '3' },
                     ],
                 },
                 {
