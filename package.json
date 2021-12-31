@@ -1,14 +1,14 @@
 {
   "name": "vue-simple-chatbot",
   "version": "0.1.0",
-  "private": true,
   "browser": "dist/vue-simple-chatbot.umd.js",
   "module": "dist/vue-simple-chatbot.common.js",
   "unpkg": "dist/vue-simple-chatbot.umd.min.js",
   "scripts": {
     "dev": "vue-cli-service serve ./example/main.js",
     "lint": "vue-cli-service lint",
-    "build-lib": "vue-cli-service build --target lib --name vue-simple-chatbot ./src/index.js"
+    "build-lib": "vue-cli-service build --target lib --name vue-simple-chatbot ./src/index.js",
+    "build-example": "vue-cli-service build ./example/index.js"
   },
   "peerDependencies": {
     "vue": "3.0.0"
@@ -42,5 +42,24 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "description": "simple chatbot ui",
+  "main": "dist/vue-simple-chatbot.common.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asmfadholi/vue-simple-chatbot.git"
+  },
+  "keywords": [
+    "vue-simple-chatbot"
+  ],
+  "author": "Mochammad Fadholi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asmfadholi/vue-simple-chatbot/issues"
+  },
+  "homepage": "https://github.com/asmfadholi/vue-simple-chatbot#readme"
 }
