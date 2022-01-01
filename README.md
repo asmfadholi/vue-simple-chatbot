@@ -1,6 +1,9 @@
 # Vue Simple Chatbot
 
-![](chatbot.png)
+<p align="center">
+    <img width="300" alt="vue bot UI" src="https://raw.githubusercontent.com/asmfadholi/vue-simple-chatbot/main/chatbot.png">
+</p>
+
 
 ## Getting Start
 
@@ -116,8 +119,14 @@ export default {
 | `width`               | String   | '350px'       | Define width of chat |
 | `styleConfig`         | Object   | { theme: 'rgb(110, 72, 170)' }       | Set theme color of chat |
 | `delay`               | Number   | 1000          | Set delay response chat both user and bot (1000 = 1 second) |
-| `botAvatar`           | Image    | [](src/assets/robot.png)        | Set bot image |
-| `userAvatar`          | Image    | [](src/assets/user.png)         | Set user image |
+| `botAvatar`           | Image    | ![](src/assets/robot.png)        | Set bot image |
+| `userAvatar`          | Image    | ![](src/assets/user.png)         | Set user image |
+
+### Slot
+
+| Name            | Description |
+| ---             | ---         |
+| `header`        | Replace header content, you can refer to this doc [example](example/App.vue) |
 
 ## Credit
 Inspired by [React Simple Chatbot](https://lucasbassetti.com.br/react-simple-chatbot/)
