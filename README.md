@@ -1,5 +1,7 @@
 # Vue Simple Chatbot
 
+![](chatbot.png)
+
 ## Getting Start
 
 ```bash
@@ -103,6 +105,22 @@ export default {
 </script>
 
 ```
-## License
 
+## Api Reference
+
+### Props
+
+| Name                  | Type     | Default       | Description |
+| ---                   | ---      | ---           | ---         |
+| `steps`               | Array    | []            | Step by step chat declare here, you can check through this doc [example](example/App.vue) |
+| `width`               | String   | '350px'       | Define width of chat |
+| `styleConfig`         | Object   | { theme: 'rgb(110, 72, 170)' }       | Set theme color of chat |
+| `delay`               | Number   | 1000          | Set delay response chat both user and bot (1000 = 1 second) |
+| `botAvatar`           | Image    | [](src/assets/robot.png)        | Set bot image |
+| `userAvatar`          | Image    | [](src/assets/user.png)         | Set user image |
+
+## Credit
 Inspired by [React Simple Chatbot](https://lucasbassetti.com.br/react-simple-chatbot/)
+## License
+MIT
+
