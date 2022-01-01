@@ -50,7 +50,6 @@
 <script>
 import LoadingMessage from './LoadingMessage.vue'
 
-
 const sendLoadingUser = { id: 'loading', message: '', user: true }
 const sendLoadingRobot = { id: 'loading', message: '' }
 export default {
@@ -83,11 +82,16 @@ export default {
   data() {
     return {
       steps: [sendLoadingRobot],
+      currentLength: 0,
     }
   },
   watch: {
     currentSteps: {
       handler(newData) {
+        const sameLength = newData.length === this.currentLength
+        if (sameLength) return
+
+        this.currentLength = newData.length
         const nextStep = newData[newData.length - 1]
         const { user } = nextStep
 
@@ -120,9 +124,9 @@ export default {
     },
 
     async processRobotMessage(payload) {
-      this.steps.push(sendLoadingRobot);
+       this.steps.push(sendLoadingRobot);
       await new Promise(resolve => setTimeout(() => {
-        this.steps[this.steps.length - 1] = payload
+        this.steps.splice(this.steps.length - 1, 1, payload)
         this.checkIsNext(payload)
         resolve()
       }, this.delay))
@@ -144,13 +148,15 @@ export default {
     async processUserMessage(payload) {
       const { label = '', trigger = '' } = payload;
       const { options = [] } = this.steps[this.steps.length - 1]
-      if (options.length) {
-        this.steps.splice(this.steps.length - 1, 1)
+      if (options?.length) {
+        this.steps.splice(this.steps.length - 1, 1, sendLoadingUser)
+      } else {
+        this.steps.push(sendLoadingUser);
       }
-      this.steps.push(sendLoadingUser);
       this.scrollToDown()
       await new Promise(resolve => setTimeout(() => {
-        this.steps[this.steps.length - 1] = { id: `user-${trigger}`, message: label, user: true }
+        const newStep = { id: `user-${trigger}`, message: label, user: true };
+        this.steps.splice(this.steps.length - 1, 1, newStep)
         this.$emit('on-next', payload)
         resolve()
       }, this.delay))

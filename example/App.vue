@@ -48,7 +48,6 @@ export default {
             id: '5',
             hideInput: true,
             options: Options,
-            end: true
         },
       ]
     }
