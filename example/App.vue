@@ -25,16 +25,16 @@ export default {
             { id: 1, label: 'Number 1', trigger: '1' },
             { id: 2, label: 'Number 2', trigger: '1' },
             { id: 3, label: 'Option component long and long and long', trigger: '5' },
-            { id: 4, label: 'User input name', trigger: '4' },
+            { id: 4, label: 'User input phone number', trigger: '4' },
           ],
         },
         {
             id: '4',
-            message: 'What is your name?',
-            trigger: 'name',
+            message: 'What is your phone number?',
+            trigger: 'phone',
         },
         {
-            id: 'name',
+            id: 'phone',
             user: true,
             validator: (value) => {
               if (isNaN(value)) {

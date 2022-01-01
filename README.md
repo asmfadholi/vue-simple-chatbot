@@ -66,9 +66,26 @@ export default {
                     id: '2',
                     hideInput: true,
                     options: [
-                        { id: 1, label: 'Option 1', trigger: '1' },
-                        { id: 2, label: 'Option 2', trigger: '3' },
+                        { id: '1', label: 'Option 1', trigger: '1' },
+                        { id: '2', label: 'Option 2', trigger: '3' },
+                        { id: '3', label: 'Option 3', trigger: '4' },
                     ],
+                },
+                {
+                    id: '4',
+                    message: 'What is your phone number?',
+                    trigger: 'phone',
+                },
+                {
+                    id: 'phone',
+                    user: true,
+                    validator: (value) => {
+                        if (isNaN(value)) {
+                            return 'value should be a number';
+                        }
+                        return true;
+                    },
+                    trigger: '2'
                 },
                 {
                     id: '3',
