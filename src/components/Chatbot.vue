@@ -68,7 +68,7 @@ export default {
         hideInput: false,
         placeholder: defaultPlaceholder,
         nextTrigger: 0,
-        validator: () => {}
+        validator: null
       }
     }
   },
@@ -94,7 +94,7 @@ export default {
     },
 
     validateInputSettings(payload) {
-      const { id = '', user = false, trigger: nextTrigger = '', validator = () => {},  placeholder = '', hideInput = false, isDisabledInput = false } = payload
+      const { id = '', user = false, trigger: nextTrigger = '', validator = null,  placeholder = '', hideInput = false, isDisabledInput = false } = payload
       const defaultSettings = {
         currentId: id,
         hideInput,

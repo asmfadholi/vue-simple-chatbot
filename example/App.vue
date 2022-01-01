@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Options from './components/Options.vue'
+import DetailData from './components/DetailData.vue'
 
 export default {
   name: 'App',
@@ -19,39 +19,49 @@ export default {
         {
           id: '1',
           hideInput: true,
-          message: 'Hello World!',
+          message: 'Hi There, May I know you?',
           trigger: '2'
         },
         {
           id: '2',
           hideInput: true,
           options: [
-            { id: 1, label: 'Number 1', trigger: '1' },
-            { id: 2, label: 'Number 2', trigger: '1' },
-            { id: 3, label: 'Option component long and long and long', trigger: '5' },
-            { id: 4, label: 'User input phone number', trigger: '4' },
+            { id: 1, label: 'Yes, of course', trigger: 'yes' },
+            { id: 2, label: 'No', trigger: 'no' }
           ],
         },
         {
-            id: '4',
-            message: 'What is your phone number?',
-            trigger: 'phone',
+          id: 'no',
+          hideInput: true,
+          end: true,
+          message: 'Oke fine, enjoy your activities!'
         },
         {
-            id: 'phone',
+            id: 'yes',
+            message: 'Ok, What is your name?',
+            trigger: 'name',
+        },
+        {
+            id: 'name',
             user: true,
-            validator: (value) => {
-              if (isNaN(value)) {
-                return 'value should be a number';
-              }
-              return true;
-            },
-            trigger: '2'
+            trigger: 'question-gender',
+        },
+        {
+            id: 'question-gender',
+            message: 'What is your gender?',
+            trigger: 'gender',
+        },
+        {
+            id: 'gender',
+            options: [
+              { id: 1, label: 'Male', trigger: '5' },
+              { id: 2, label: 'Female', trigger: '5' }
+            ],
         },
         {
             id: '5',
             hideInput: true,
-            options: Options,
+            options: DetailData,
         },
       ]
     }

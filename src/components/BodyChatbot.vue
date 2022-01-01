@@ -283,11 +283,10 @@ export default {
 .vct-custom-component {
   background: rgb(255, 255, 255);
   border-radius: 5px;
-  box-shadow: rgb(0 0 0 / 15%) 0px 1px 2px 0px;
-  display: flex;
+  box-shadow: rgb(0 0 0 / 15%) 0 1px 2px 0;
   -webkit-box-pack: center;
   justify-content: center;
-  margin: 0px 6px 10px;
+  margin: 0 6px 10px;
   padding: 16px;
 }
 

@@ -19,7 +19,7 @@ export default {
         hideInput: false,
         placeholder: '',
         nextTrigger: 0,
-        validator: () => {}
+        validator: null
       })
     }
   },
@@ -39,6 +39,8 @@ export default {
     },
 
     validateInput() {
+      if (!this.inputSettings.validator) return true
+      
       const res = this.inputSettings.validator(this.inputUser)
       const dataTypeBoolean = typeof res === 'boolean';
 

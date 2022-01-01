@@ -16,7 +16,6 @@ yarn add vue-simple-chatbot
 
 ``` javascript
 import VueChatbot from 'vue-simple-chatbot';
-import 'vue-simple-chatbot/dist/vue-simple-chatbot.css'
 
 export default {
   name: 'App',
@@ -32,7 +31,6 @@ export default {
 import { createApp } from 'vue'
 import VueChatbot from 'vue-simple-chatbot';
 import App from './App.vue'
-import 'vue-simple-chatbot/dist/vue-simple-chatbot.css'
 
 const app = createApp(App)
 
@@ -46,7 +44,11 @@ app.mount('#app')
 
 ``` vue
 <template>
-   <vue-chatbot :steps="steps" />
+   <vue-chatbot :steps="steps">
+        <template v-slot:header>
+          <div>Hi, Chatbot Here</div>
+       </template>
+   </vue-chatbot>
 </template>
 
 <script>
@@ -59,16 +61,16 @@ export default {
                 {
                     id: '1',
                     hideInput: true,
-                    message: 'Hello World!',
+                    message: 'Hello There...',
                     trigger: '2'
                 },
                 {
                     id: '2',
                     hideInput: true,
                     options: [
-                        { id: '1', label: 'Option 1', trigger: '1' },
-                        { id: '2', label: 'Option 2', trigger: '3' },
-                        { id: '3', label: 'Option 3', trigger: '4' },
+                        { id: '1', label: 'Please try again', trigger: '1' },
+                        { id: '2', label: 'I am busy', trigger: '3' },
+                        { id: '3', label: 'Ask me phone number', trigger: '4' },
                     ],
                 },
                 {
@@ -81,16 +83,16 @@ export default {
                     user: true,
                     validator: (value) => {
                         if (isNaN(value)) {
-                            return 'value should be a number';
+                            return 'Value should be a number';
                         }
                         return true;
                     },
-                    trigger: '2'
+                    trigger: '3'
                 },
                 {
                     id: '3',
                     hideInput: true,
-                    message: 'Bye',
+                    message: 'Enjoy your activities!',
                     end: true
                 },
             ]

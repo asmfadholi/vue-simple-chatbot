@@ -1,7 +1,8 @@
 <template>
   <div>
-     Hello there {{ getName }}
-     <button @click="handleClick" :disabled="isDisabled">Click here</button>
+    <div>Hi {{ getName }}, Nice To meet you. :)</div>
+    <br />
+    <button @click="handleClick" :disabled="isDisabled">Reset here</button>
   </div>
 </template>
 
@@ -28,7 +29,7 @@ export default {
   },
   methods: {
     handleClick() {
-      const payload = { label: 'Betul Sekali', trigger: '1' }
+      const payload = { label: 'Reset', trigger: '1' }
       this.$emit('on-trigger-next', payload)
       this.isDisabled = true
     }
