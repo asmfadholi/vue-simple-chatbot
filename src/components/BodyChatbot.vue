@@ -117,14 +117,14 @@ export default {
     },
 
     checkIsNext(payload) {
-      const { trigger = false } = payload
-      if (trigger) {
-        this.$emit('on-next', payload)
-      }
+      const { trigger = '', end = false } = payload
+      if (!trigger || end) return
+     
+      this.$emit('on-next', payload)
     },
 
     async processRobotMessage(payload) {
-       this.steps.push(sendLoadingRobot);
+      this.steps.push(sendLoadingRobot);
       await new Promise(resolve => setTimeout(() => {
         this.steps.splice(this.steps.length - 1, 1, payload)
         this.checkIsNext(payload)

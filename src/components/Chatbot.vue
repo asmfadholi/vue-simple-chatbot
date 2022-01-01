@@ -1,6 +1,8 @@
 <template>
   <div class="vct-vue-chatbot" :style="theme">
-    <header-chatbot />
+    <header-chatbot :title="hasHeaderSlot ? '' : 'Chat'">
+      <slot name="header" />
+    </header-chatbot>
     <body-chatbot :currentSteps="currentSteps" :delay="delay" @on-next="handleOnNextTriggerBySystem" :botAvatar="botAvatar" :userAvatar="userAvatar" :currentData="currentData" @set-current-data="setCurrentData" />
     <input-chatbot @on-next-trigger="handleOnNextTriggerByUserInput" :inputSettings="inputSettings" v-if="!inputSettings.hideInput" />
   </div>
@@ -77,6 +79,9 @@ export default {
         width: this.width
       }
     },
+     hasHeaderSlot() {
+      return this.$slots.header
+    }
   },
   created() {
     this.initCurrentStep();

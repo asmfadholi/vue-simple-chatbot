@@ -1,6 +1,10 @@
 <template>
   <div class="wrapper-chatbot">
-     <vue-chatbot :steps="steps" />
+     <vue-chatbot :steps="steps">
+       <template v-slot:header>
+          <div>Hi, Chatbot Here</div>
+       </template>
+     </vue-chatbot>
   </div>
 </template>
 

@@ -1,6 +1,7 @@
 <template>
   <div class="vct-header-chatbot">
     {{ title }}
+    <slot />
   </div>
 </template>
 
